@@ -30,25 +30,22 @@ Things you may want to cover:
 |name|string|null: false, unique: true|◯|
 |email|string|null: false, unique: true|-|
 |password|string|null: false|-|
-|message_id|string||-|
-|group_id|string||-|
 
 ### Association
 - has_many :groups, through: :groups_users
 - has_many :messages
+- has_many :groups_users
 
 
 ## groupsテーブル
 |Column|Type|Options|index|
 |------|----|-------|-----|
-|group_name|string|null: false, unique: true|◯|
-|user_id|integer|null: false|-|
-|message_id|integer|null: false|-|
+|name|string|null: false, unique: true|◯|
 
 ### Association
 - has_many :users, through: :groups_users
 - has_many :messages
-
+- has_many :groups_users
 
 ## messagesテーブル
 |Column|Type|Options|index|
