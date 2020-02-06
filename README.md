@@ -25,13 +25,13 @@ Things you may want to cover:
 
 
 ## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
-|message_id|
-|group_id|
+|Column|Type|Options|index|
+|------|----|-------|-----|
+|name|string|null: false, unique: true|◯|
+|email|string|null: false, unique: true|-|
+|password|string|null: false|-|
+|message_id|string||-|
+|group_id|string||-|
 
 ### Association
 - has_many :groups, through: :groups_users
@@ -39,11 +39,11 @@ Things you may want to cover:
 
 
 ## groupsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|group_name|string|null: false, unique: true|
-|user_id|integer|null: false|
-|message_id|integer|null: false|
+|Column|Type|Options|index|
+|------|----|-------|-----|
+|group_name|string|null: false, unique: true|◯|
+|user_id|integer|null: false|-|
+|message_id|integer|null: false|-|
 
 ### Association
 - has_many :users, through: :groups_users
@@ -51,12 +51,12 @@ Things you may want to cover:
 
 
 ## messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|body|text|
-|image|text|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|Column|Type|Options|index|
+|------|----|-------|-----|
+|body|text||-|-|
+|image|text|-|-|
+|group_id|integer|null: false, foreign_key: true|-|
+|user_id|integer|null: false, foreign_key: true|-|
 
 ### Association
 - belongs_to :user
@@ -64,10 +64,10 @@ Things you may want to cover:
 
 
 ## groups_usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|Column|Type|Options|index|
+|------|----|-------|-----|
+|user_id|integer|null: false, foreign_key: true|-|
+|group_id|integer|null: false, foreign_key: true|-|
 
 ### Association
 - belongs_to :group
