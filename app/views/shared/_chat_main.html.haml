@@ -1,0 +1,36 @@
+.chat-main
+  .chat-main__group-info
+    .group-info
+      .group-info__name test
+      .group-info__member Member:masa
+    .group-info__edit
+      .edit-botton Edit
+
+  .chat-main__message
+    .message__list
+      .message__list--name masa
+      .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    .message__text おはよー
+    .message__list
+      .message__list--name masa
+      .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    .message__text おやすみー
+    .message__list
+      .message__list--name masa
+      .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    .message__text こにちーわ
+    .message__list
+      .message__list--name masa
+      .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    .message__text こんばんわー
+
+
+  .chat-main__message-area
+    .input-box
+      %form.message-area__form
+        %input.message-area__text{type: "text", placeholder: "type a message", class: "message-area__text"}
+        %label{class: "message-area__image"}
+          =icon('fas', "image")
+          %input{type: "file", class: "message-area__file"}
+      %input.submit-btn{type: "submit", value: "Send", class: "submit-btn"}
+

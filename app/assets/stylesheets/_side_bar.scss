@@ -1,0 +1,66 @@
+.side-bar {
+  background-color: #2f3e51;
+  width: 300px;
+  height: 100vh;
+}
+
+.side-bar__user-name {
+  background-color: #253141;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.top-items {
+  width: 260px;
+  height: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  &__name {
+    line-height: 20px;
+    font-size: 16px;
+    display: flex;
+    color: #ffffff;
+  }
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+}
+
+.top-items__icons {
+  display: flex;
+  line-height: 20px;
+  width: 60px;
+  color: #ffffff;
+  &--newgroup {
+    color: #ffffff;
+    margin-right: 5px;
+  }
+  &--edituser {
+    color: #ffffff;
+  }
+}
+
+.side-bar__group-list {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.group-list {
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  &__group-name {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  &__post-message {
+    font-size: 11px;
+    margin-bottom: 40px;
+  }
+}
