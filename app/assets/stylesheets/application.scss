@@ -1,8 +1,11 @@
 /*これから追加する全てのスタイルシートはapplication.scssから@importを使って読み込んでください*/
 @import "reset";
+@import "config/colors";
 @import "modules/messages";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "side_bar";
 @import "chat_main";
 @import "index";
+@import "modules/user";
+@import "modules/flash"
