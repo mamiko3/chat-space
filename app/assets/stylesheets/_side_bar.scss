@@ -18,31 +18,31 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  &__name {
+    line-height: 20px;
+    font-size: 16px;
+    display: flex;
+    color: #ffffff;
+  }
 }
 
 .ul {
   list-style: none;
-}
-
-.top-items__name {
-  line-height: 20px;
-  font-size: 16px;
-  color: #ffffff;
+  display: flex;
 }
 
 .top-items__icons {
   display: flex;
   line-height: 20px;
   width: 60px;
-}
-
-.top-items__icons--newgroup {
   color: #ffffff;
-  margin-right: 5px;
-}
-
-.top-items__icons--edituser {
-  color: #ffffff;
+  &--newgroup {
+    color: #ffffff;
+    margin-right: 5px;
+  }
+  &--edituser {
+    color: #ffffff;
+  }
 }
 
 .side-bar__group-list {
@@ -54,17 +54,13 @@
   width: auto;
   margin-left: 20px;
   margin-right: 20px;
-}
-
-.group-list__group-name {
-  font-size: 15px;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  // border:0.5px solid seashell;
-}
-
-.group-list__post-message {
-  font-size: 11px;
-  margin-bottom: 40px;
-  // border:0.5px solid purple;
+  &__group-name {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  &__post-message {
+    font-size: 11px;
+    margin-bottom: 40px;
+  }
 }
