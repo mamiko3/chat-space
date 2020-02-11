@@ -45,22 +45,29 @@
   }
 }
 
-.side-bar__group-list {
+.side-bar__groups-list {
   color: #ffffff;
   font-weight: bold;
+}
+
+a {
+  text-decoration: none;
 }
 
 .group-list {
   width: auto;
   margin-left: 20px;
   margin-right: 20px;
+  color: #ffffff;
   &__group-name {
     font-size: 15px;
     margin-top: 20px;
     margin-bottom: 5px;
+    color: #ffffff;
   }
   &__post-message {
     font-size: 11px;
     margin-bottom: 40px;
+    color: #ffffff;
   }
 }
