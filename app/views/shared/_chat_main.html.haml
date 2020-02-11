@@ -27,10 +27,27 @@
 
   .chat-main__message-area
     .input-box
-      %form.message-area__form
-        %input.message-area__text{type: "text", placeholder: "type a message", class: "message-area__text"}
-        %label{class: "message-area__image"}
-          =icon('fas', "image")
-          %input{type: "file", class: "message-area__file"}
-      %input.submit-btn{type: "submit", value: "Send", class: "submit-btn"}
+      = form_for [@group, @message] do |f|
+        .message-area__form
+          = f.text_field :body, class: 'message-area__text', placeholder: 'type a message'
+          = f.label :image, class: 'message-area__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'message-area__file'
+          = f.submit 'Send', class: 'submit-btn'  
 
+
+        -#   %input.message-area__text{type: "text", placeholder: "type a message", class: "message-area__text"}
+        -#   %label{class: "message-area__image"}
+        -#     =icon('fas', "image")
+        -#     %input{type: "file", class: "message-area__file"}
+        -# %input.submit-btn{type: "submit", value: "Send", class: "submit-btn"}
+
+
+    -# .form
+    -#   = form_for [@group, @message] do |f|
+    -#     = f.text_field :body, class: 'message-area__text', placeholder: 'type a message'
+    -#     .form__mask
+    -#       = f.label :image, class: 'message-area__image' do
+    -#         = icon('fas', 'image', class: 'icon')
+    -#         = f.file_field :image, class: 'message-area__file'
+    -#     = f.submit 'Send', class: 'submit-btn'
