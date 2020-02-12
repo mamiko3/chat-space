@@ -1,28 +1,37 @@
 .chat-main
   .chat-main__group-info
     .group-info
-      .group-info__name test
-      .group-info__member Member:masa
+      .group-info__name
+        = link_to group_messages_path(@group) do
+          =@group.name
+      .group-info__member
+        %ul
+          Member: 
+          - @group.users.each do |user|
+            %li= user.name
     .group-info__edit
-      .edit-botton Edit
+      .edit-botton
+        = link_to edit_group_path(@group) do
+          = 'Edit'
 
   .chat-main__message
-    .message__list
-      .message__list--name masa
-      .message__list--timestamp 2020/02/07(Fri) 20:44:56
-    .message__text おはよー
-    .message__list
-      .message__list--name masa
-      .message__list--timestamp 2020/02/07(Fri) 20:44:56
-    .message__text おやすみー
-    .message__list
-      .message__list--name masa
-      .message__list--timestamp 2020/02/07(Fri) 20:44:56
-    .message__text こにちーわ
-    .message__list
-      .message__list--name masa
-      .message__list--timestamp 2020/02/07(Fri) 20:44:56
-    .message__text こんばんわー
+    = render @messages
+    -# .message__list
+    -#   .message__list--name masa
+    -#   .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    -# .message__text おはよー
+    -# .message__list
+    -#   .message__list--name masa
+    -#   .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    -# .message__text おやすみー
+    -# .message__list
+    -#   .message__list--name masa
+    -#   .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    -# .message__text こにちーわ
+    -# .message__list
+    -#   .message__list--name masa
+    -#   .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    -# .message__text こんばんわー
 
 
   .chat-main__message-area
