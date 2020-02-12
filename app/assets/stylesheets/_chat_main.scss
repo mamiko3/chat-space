@@ -15,26 +15,38 @@
 
 .group-info {
   padding-top: 35px;
+  display: inline;
 
   &__name {
-    color: #333333;
     font-size: 20px;
     margin-bottom: 15px;
+  }
+
+  &__name a {
+    color: #333333;
   }
 
   &__member {
     color: #999999;
     font-size: 12px;
   }
+}
 
-  &__edit {
+li {
+  display: inline;
+}
+
+.group-info__edit {
    margin-top: 28px;
    width: 72px;
   }
+
+.edit-botton a {
+    color: #38aef0;
 }
 
 .edit-botton {
-  color: #38aef0;
+  // color: #38aef0;
   border:1px solid #38aef0;
   font-size: 16px;
   padding-right: 20px;
@@ -82,7 +94,7 @@
 
 .input-box {
   width: 100%;
-  display: flex;
+  // display: flex;
   align-items: center;
   padding: 20px 40px;
 }
@@ -107,7 +119,7 @@
 .fa-image {
   position: absolute;
   top: 20px;
-  right: 10px;
+  right: 150px;
 }
 
 .submit-btn {

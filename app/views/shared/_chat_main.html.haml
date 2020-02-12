@@ -1,36 +1,62 @@
 .chat-main
   .chat-main__group-info
     .group-info
-      .group-info__name test
-      .group-info__member Member:masa
+      .group-info__name
+        = link_to group_messages_path(@group) do
+          =@group.name
+      .group-info__member
+        %ul
+          Member: 
+          - @group.users.each do |user|
+            %li= user.name
     .group-info__edit
-      .edit-botton Edit
+      .edit-botton
+        = link_to edit_group_path(@group) do
+          = 'Edit'
 
   .chat-main__message
-    .message__list
-      .message__list--name masa
-      .message__list--timestamp 2020/02/07(Fri) 20:44:56
-    .message__text おはよー
-    .message__list
-      .message__list--name masa
-      .message__list--timestamp 2020/02/07(Fri) 20:44:56
-    .message__text おやすみー
-    .message__list
-      .message__list--name masa
-      .message__list--timestamp 2020/02/07(Fri) 20:44:56
-    .message__text こにちーわ
-    .message__list
-      .message__list--name masa
-      .message__list--timestamp 2020/02/07(Fri) 20:44:56
-    .message__text こんばんわー
+    = render @messages
+    -# .message__list
+    -#   .message__list--name masa
+    -#   .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    -# .message__text おはよー
+    -# .message__list
+    -#   .message__list--name masa
+    -#   .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    -# .message__text おやすみー
+    -# .message__list
+    -#   .message__list--name masa
+    -#   .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    -# .message__text こにちーわ
+    -# .message__list
+    -#   .message__list--name masa
+    -#   .message__list--timestamp 2020/02/07(Fri) 20:44:56
+    -# .message__text こんばんわー
 
 
   .chat-main__message-area
     .input-box
-      %form.message-area__form
-        %input.message-area__text{type: "text", placeholder: "type a message", class: "message-area__text"}
-        %label{class: "message-area__image"}
-          =icon('fas', "image")
-          %input{type: "file", class: "message-area__file"}
-      %input.submit-btn{type: "submit", value: "Send", class: "submit-btn"}
+      = form_for [@group, @message] do |f|
+        .message-area__form
+          = f.text_field :body, class: 'message-area__text', placeholder: 'type a message'
+          = f.label :image, class: 'message-area__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'message-area__file'
+          = f.submit 'Send', class: 'submit-btn'  
 
+
+        -#   %input.message-area__text{type: "text", placeholder: "type a message", class: "message-area__text"}
+        -#   %label{class: "message-area__image"}
+        -#     =icon('fas', "image")
+        -#     %input{type: "file", class: "message-area__file"}
+        -# %input.submit-btn{type: "submit", value: "Send", class: "submit-btn"}
+
+
+    -# .form
+    -#   = form_for [@group, @message] do |f|
+    -#     = f.text_field :body, class: 'message-area__text', placeholder: 'type a message'
+    -#     .form__mask
+    -#       = f.label :image, class: 'message-area__image' do
+    -#         = icon('fas', 'image', class: 'icon')
+    -#         = f.file_field :image, class: 'message-area__file'
+    -#     = f.submit 'Send', class: 'submit-btn'
