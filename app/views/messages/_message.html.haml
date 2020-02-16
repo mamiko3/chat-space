@@ -6,6 +6,6 @@
       = message.created_at.strftime ("%Y年%m月%d日 %H時%M分")
     .message__text
       - if message.body.present?
-        %p.message__text
+        %p
         = message.body
-      = image_tag image.url, class: 'message__text__image' if message.image.present?
+      = image_tag message.image.url, class: 'message__text__image' if message.image.present?
