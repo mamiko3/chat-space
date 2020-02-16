@@ -37,8 +37,8 @@ li {
 }
 
 .group-info__edit {
-   margin-top: 28px;
-   width: 72px;
+  margin-top: 28px;
+  width: 72px;
   }
 
 .edit-botton a {
@@ -60,6 +60,7 @@ li {
   height: calc(100vh - 101px - 90px);
   padding-left: 40px;
   padding-top: 35px;
+  overflow: auto; 
 }
 
 .message__list{
@@ -83,6 +84,11 @@ li {
   font-size: 14px;
   color: #434A54;
   margin-bottom: 46px;
+  p{
+    font-size: 14px;
+    color: #434A54;
+    margin-bottom: 46px;
+  }
 }
 
 .chat-main__message-area {
