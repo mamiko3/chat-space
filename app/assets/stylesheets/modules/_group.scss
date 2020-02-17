@@ -81,9 +81,9 @@ li {
 }
 
 .chat-group-user {
-  padding: 0 15px;
+  // padding: 0 15px;
   line-height: 50px;
-  font-size: 14px;
+  // font-size: 14px;
   border-bottom: 1px solid #ddd;
   &:after {
     content: "";
@@ -92,9 +92,12 @@ li {
   }
   &__name {
     float: left;
+    height: 50px;
+    line-height: 50px;
   }
   &__btn {
     float: right;
+    line-height: 50px;
     display: inline-block;
     cursor: pointer;
     &--add {
