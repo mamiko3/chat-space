@@ -8,6 +8,9 @@ set :application, 'chat-space'
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:mamiko3/chat-space.git'
 
+# sercrets.yml用のシンボリックリンクを追加
+set :linked_files, %w{ config/secrets.yml }
+
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
@@ -31,6 +34,7 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+
   desc 'upload secrets.yml'
   task :upload do
     on roles(:app) do |host|
@@ -44,5 +48,3 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-# sercrets.yml用のシンボリックリンクを追加
-set linked_files, %w{ config/secrets/yml }
