@@ -1,4 +1,5 @@
 $(function(){
+  console.log("aaa")
 
   var buildHTML = function(message) {
     if (message.body && message.image) {
@@ -80,6 +81,7 @@ $(function(){
 
     var reloadMessages = function(){
       last_message_id = $('.message:last').data("message-id");
+      console.log(last_message_id)
       $.ajax({
         url: "api/messages",
         type: "get",
@@ -87,6 +89,7 @@ $(function(){
         data: {id: last_message_id}
       })
       .done(function(messages){
+        console.log(messages)
         if (messages.length !== 0) {
           var inserHTML = '';
           $.each(messages, function(i,message){
@@ -100,7 +103,8 @@ $(function(){
           alert("ユーザー検索に失敗しました");
         });
       };
-      if (document.location.href.match(/\/groups\/\+d\/messages/)) {
+      if (document.location.href.match(/\/groups\/\d+\/messages/)) {
         setInterval(reloadMessages, 7000);
+        console.log(document.location.href)
       }
   });
