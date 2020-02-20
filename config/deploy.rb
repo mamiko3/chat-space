@@ -8,7 +8,7 @@ set :application, 'chat-space'
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:mamiko3/chat-space.git'
 
-# sercrets.yml用のシンボリックリンクを追加
+# sercrets.yml用のシンボリックリンクを追加する
 set :linked_files, %w{ config/secrets.yml }
 
 # バージョンが変わっても共通で参照するディレクトリを指定
@@ -28,7 +28,7 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-# デプロイ処理が終わった後、Unicornを再起動するための記述
+# デプロイ処理が終わった後、Unicornを再起動するための記述（記述内容修正済み）
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
